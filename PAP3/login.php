@@ -42,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $mysqli){
                         if($role === 'admin'){
                             header("location: admin.php");
                         } else {
-                            header("location: dashboard.php");
+                            header("location: dashboard/index.php");
                         }
                         exit();
                     } else{
@@ -128,16 +128,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $mysqli){
     </div>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="padding: 0; box-shadow: none;">
         <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-        <div>
-            <label><i class="fas fa-user"></i> Utilizador</label>
-            <input type="text" name="username" required placeholder="Nome de utilizador">
+        <div class="form-group" style="margin-bottom: 25px;">
+            <label style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-weight: 600; color: #475569;">
+                <i class="fas fa-user" style="color: var(--primary-color);"></i> Utilizador
+            </label>
+            <input type="text" name="username" required placeholder="Nome de utilizador" style="width: 100%; box-sizing: border-box; display: block;">
+        </div>
+        <div class="form-group" style="margin-bottom: 25px;">
+            <label style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-weight: 600; color: #475569;">
+                <i class="fas fa-lock" style="color: var(--primary-color);"></i> Palavra-passe
+            </label>
+            <input type="password" name="password" required placeholder="Sua senha" style="width: 100%; box-sizing: border-box; display: block;">
         </div>
         <div>
-            <label><i class="fas fa-lock"></i> Palavra-passe</label>
-            <input type="password" name="password" required placeholder="Sua senha">
-        </div>
-        <div>
-            <button type="submit" class="btn" style="width: 100%;">Entrar</button>
+            <button type="submit" class="btn" style="width: 100%; font-size: 1.1rem; padding: 16px;">Entrar</button>
         </div>
     </form>
     <?php

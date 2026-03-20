@@ -177,6 +177,9 @@ section h2 {
 .message-body {
     font-size: 0.95rem;
     line-height: 1.5;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
 }
 
 /* Table Styling */

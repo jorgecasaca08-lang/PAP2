@@ -5,7 +5,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
     header("location: login.php");
     exit;
 }
-require_once 'includes/config.php';
+require_once '../includes/config.php';
 
 // Initialize CSRF token if not already set
 if (empty($_SESSION['csrf_token'])) {
@@ -66,8 +66,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['priority_contact'])){
     <title>Área de Cliente - Alfa Engenharia & Construções</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="public/css/user_dashboard.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -78,8 +78,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['priority_contact'])){
             <p>Bem-vindo à sua área reservada e segura.</p>
         </div>
         <div>
-            <a href="index.php" class="btn-submit" style="text-decoration: none; background: #6c757d;"><i class="fas fa-globe"></i> Voltar ao Site</a>
-            <a href="admin/logout.php" class="btn-submit" style="text-decoration: none; background: #dc3545;"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            <a href="../index.php" class="btn-submit" style="text-decoration: none; background: #6c757d;"><i class="fas fa-globe"></i> Voltar ao Site</a>
+            <a href="../admin/logout.php" class="btn-submit" style="text-decoration: none; background: #dc3545;"><i class="fas fa-sign-out-alt"></i> Sair</a>
         </div>
     </header>
 
@@ -94,7 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['priority_contact'])){
         <!-- Form Pedido de Orçamento -->
         <div class="dashboard-card" data-aos="fade-up">
             <h3><i class="fas fa-file-invoice"></i> Solicitar Orçamento</h3>
-            <form action="dashboard.php" method="post" style="padding:0; box-shadow:none; width:100%; max-width:100%;">
+            <form action="index.php" method="post" style="padding:0; box-shadow:none; width:100%; max-width:100%;">
                 <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                 <div class="form-group">
                     <label>Tipo de Serviço</label>
@@ -118,7 +118,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['priority_contact'])){
         <div class="dashboard-card" data-aos="fade-up" data-aos-delay="100">
             <h3><i class="fas fa-headset"></i> Contacto Prioritário</h3>
             <p style="font-size: 0.9rem; color: #666; margin-bottom: 25px;">Obrigado por ser nosso cliente. A sua mensagem será tratada com prioridade máxima.</p>
-            <form action="dashboard.php" method="post" style="padding:0; box-shadow:none; width:100%; max-width:100%;">
+            <form action="index.php" method="post" style="padding:0; box-shadow:none; width:100%; max-width:100%;">
                 <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                 <div class="form-group">
                     <label>Assunto</label>
