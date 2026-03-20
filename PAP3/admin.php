@@ -13,95 +13,79 @@ require_once 'includes/config.php';
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Administrativo - Alfa Engenharia & Construções</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="admin/styles.css">
-    <style>
-        .sidebar {
-            width: 250px;
-            float: left;
-            background: #f8f9fa;
-            padding: 20px;
-            min-height: 100vh;
-        }
-        .content {
-            margin-left: 270px;
-            padding: 20px;
-        }
-        .nav-links {
-            list-style: none;
-            padding: 0;
-        }
-        .nav-links li {
-            margin-bottom: 10px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            display: block;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .nav-links a:hover, .nav-links a.active {
-            background: #007bff;
-            color: #white;
-        }
-        .nav-links a.active { color: white; }
-        .nav-links a:hover { color: white; }
-
-        .section-card {
-            background: white;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .alert-success { color: #155724; background-color: #d4edda; border-color: #c3e6cb; padding: 10px; border-radius: 4px; margin-bottom: 15px; }
-        .alert-danger { color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; padding: 10px; border-radius: 4px; margin-bottom: 15px; }
-    </style>
 </head>
 <body>
 
 <div class="sidebar">
-    <h2>Admin</h2>
+    <h2><i class="fas fa-tools"></i> Admin</h2>
     <p>Bem-vindo, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></p>
-    <hr>
+    <hr style="border: 0.5px solid #e2e8f0; margin: 20px 0;">
     <ul class="nav-links">
-        <li><a href="admin.php?section=messages" <?php echo (!isset($_GET['section']) || $_GET['section'] == 'messages') ? 'class="active"' : ''; ?>>Mensagens</a></li>
-        <li><a href="admin.php?section=quotes" <?php echo (isset($_GET['section']) && $_GET['section'] == 'quotes') ? 'class="active"' : ''; ?>>Orçamentos</a></li>
-        <li><a href="admin.php?section=portfolio" <?php echo (isset($_GET['section']) && $_GET['section'] == 'portfolio') ? 'class="active"' : ''; ?>>Portefólio</a></li>
-        <li><a href="admin.php?section=users" <?php echo (isset($_GET['section']) && $_GET['section'] == 'users') ? 'class="active"' : ''; ?>>Utilizadores</a></li>
-        <li><a href="index.php">Ver Site</a></li>
-        <li><a href="admin/logout.php" style="color: #dc3545;">Sair</a></li>
+        <li><a href="admin.php?section=dashboard" <?php echo (isset($_GET['section']) && $_GET['section'] == 'dashboard') ? 'class="active"' : ''; ?>><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="admin.php?section=messages" <?php echo (!isset($_GET['section']) || $_GET['section'] == 'messages') ? 'class="active"' : ''; ?>><i class="fas fa-envelope"></i> Mensagens</a></li>
+        <li><a href="admin.php?section=quotes" <?php echo (isset($_GET['section']) && $_GET['section'] == 'quotes') ? 'class="active"' : ''; ?>><i class="fas fa-file-invoice-dollar"></i> Orçamentos</a></li>
+        <li><a href="admin.php?section=portfolio" <?php echo (isset($_GET['section']) && $_GET['section'] == 'portfolio') ? 'class="active"' : ''; ?>><i class="fas fa-images"></i> Portefólio</a></li>
+        <li><a href="admin.php?section=users" <?php echo (isset($_GET['section']) && $_GET['section'] == 'users') ? 'class="active"' : ''; ?>><i class="fas fa-users"></i> Utilizadores</a></li>
+        <li><a href="index.php"><i class="fas fa-external-link-alt"></i> Ver Site</a></li>
+        <li><a href="admin/logout.php" style="color: #dc3545;"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
     </ul>
 </div>
 
 <div class="content">
     <?php
-    $section = $_GET['section'] ?? 'messages';
+    $section = $_GET['section'] ?? 'dashboard';
 
     switch($section){
+        case 'dashboard':
+            // Fetch stats for dashboard
+            $total_messages = 0;
+            $total_quotes = 0;
+            $total_users = 0;
+
+            if($mysqli){
+                $total_messages = $mysqli->query("SELECT id FROM messages")->num_rows;
+                $total_quotes = $mysqli->query("SELECT id FROM quotes")->num_rows;
+                $total_users = $mysqli->query("SELECT id FROM users")->num_rows;
+            }
+
+            echo "<h1>Painel Geral</h1>";
+            echo "<div class='stats-grid'>";
+            echo "<div class='stat-card'><h3>Mensagens</h3><div class='value'>$total_messages</div></div>";
+            echo "<div class='stat-card'><h3>Orçamentos</h3><div class='value'>$total_quotes</div></div>";
+            echo "<div class='stat-card'><h3>Utilizadores</h3><div class='value'>$total_users</div></div>";
+            echo "</div>";
+
+            echo "<h2>Ações Rápidas</h2>";
+            echo "<div style='display: flex; gap: 20px;'>";
+            echo "<a href='admin.php?section=messages' class='btn-primary' style='text-decoration:none;'>Ver Mensagens</a>";
+            echo "<a href='admin.php?section=quotes' class='btn-primary' style='text-decoration:none;'>Gerir Orçamentos</a>";
+            echo "</div>";
+            break;
         case 'messages':
             echo "<h1>Gestão de Mensagens</h1>";
-            echo "<div class='section-card'>";
+            echo "<section>";
             include 'includes/messages.php';
-            echo "</div>";
+            echo "</section>";
             break;
         case 'quotes':
             echo "<h1>Gestão de Orçamentos</h1>";
-            echo "<div class='section-card'>";
+            echo "<section>";
             include 'includes/quote_management.php';
-            echo "</div>";
+            echo "</section>";
             break;
         case 'portfolio':
             echo "<h1>Gestão de Portefólio</h1>";
-            echo "<div class='section-card'>";
+            echo "<section>";
             include 'includes/portfolio_management.php';
-            echo "</div>";
+            echo "</section>";
             break;
         case 'users':
             echo "<h1>Gestão de Utilizadores</h1>";
-            echo "<div class='section-card'>";
+            echo "<section>";
             include 'includes/user_management.php';
-            echo "</div>";
+            echo "</section>";
             break;
         default:
             echo "<h1>Bem-vindo ao Dashboard</h1>";

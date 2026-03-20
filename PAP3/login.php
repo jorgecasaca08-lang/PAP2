@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $mysqli){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Alfa Admin</title>
+    <title>Login | Alfa Engenharia & Construções</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <style>
@@ -124,7 +124,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $mysqli){
 <div class="login-card">
     <div class="login-header">
         <i class="fas fa-user-shield"></i>
-        <h2>Login - Alfa Engenharia</h2>
+        <h2>Login - Alfa Engenharia & Construções</h2>
     </div>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="padding: 0; box-shadow: none;">
         <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login de Cliente - CRM</title>
+    <title>Login de Cliente - Alfa Engenharia & Construções</title>
     <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
         <div class="logo-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
         </div>
-        <span>CRM Premium</span>
+        <span>Alfa Engenharia & Construções</span>
     </a>
     <div class="form-container">
         <h2>Login de Cliente</h2>

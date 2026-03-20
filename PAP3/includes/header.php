@@ -13,7 +13,9 @@
 
 <header class="main-header">
     <div class="logo-container">
-        <a href="index.php" class="logo-text">Alfa <span>Engenharia & Construções</span></a>
+        <a href="index.php" class="logo-link">
+            <img src="assets/alfa-logo.png" alt="Alfa Engenharia Logo" class="logo-image">
+        </a>
     </div>
     <nav class="main-nav">
         <a href="index.php"><i class="fas fa-home"></i> Home</a>
