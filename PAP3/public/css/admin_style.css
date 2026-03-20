@@ -1,0 +1,24 @@
+/* public/css/admin_style.css */
+
+/* Estilos específicos para a área de administração para a diferenciar da área do cliente */
+
+.form-container {
+    border-top: 5px solid #343a40; /* Cor escura para o topo */
+}
+
+h2 {
+    color: #343a40;
+}
+
+.form-group button {
+    background: linear-gradient(135deg, #343a40, #23272b);
+}
+
+.form-group button:hover {
+    background: linear-gradient(135deg, #23272b, #1a1e21);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+a {
+    color: #343a40;
+}
