@@ -178,8 +178,10 @@ section h2 {
     font-size: 0.95rem;
     line-height: 1.5;
     overflow-wrap: break-word;
-    word-break: break-word;
+    word-break: break-all;
     max-width: 100%;
+    display: block;
+    white-space: normal;
 }
 
 /* Table Styling */

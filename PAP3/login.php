@@ -128,17 +128,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $mysqli){
     </div>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="padding: 0; box-shadow: none;">
         <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-        <div class="form-group" style="margin-bottom: 25px;">
-            <label style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-weight: 600; color: #475569;">
-                <i class="fas fa-user" style="color: var(--primary-color);"></i> Utilizador
+        <div class="form-group" style="margin-bottom: 25px; text-align: left;">
+            <label style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-weight: 600; color: #475569; font-size: 1rem;">
+                <i class="fas fa-user" style="color: var(--primary-color); width: 20px; text-align: center;"></i> Utilizador
             </label>
-            <input type="text" name="username" required placeholder="Nome de utilizador" style="width: 100%; box-sizing: border-box; display: block;">
+            <input type="text" name="username" required placeholder="Nome de utilizador" style="width: 100%; box-sizing: border-box; display: block; padding: 14px; border-radius: 10px; border: 1px solid #e2e8f0; font-size: 1rem;">
         </div>
-        <div class="form-group" style="margin-bottom: 25px;">
-            <label style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-weight: 600; color: #475569;">
-                <i class="fas fa-lock" style="color: var(--primary-color);"></i> Palavra-passe
+        <div class="form-group" style="margin-bottom: 30px; text-align: left;">
+            <label style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-weight: 600; color: #475569; font-size: 1rem;">
+                <i class="fas fa-lock" style="color: var(--primary-color); width: 20px; text-align: center;"></i> Palavra-passe
             </label>
-            <input type="password" name="password" required placeholder="Sua senha" style="width: 100%; box-sizing: border-box; display: block;">
+            <input type="password" name="password" required placeholder="Sua senha" style="width: 100%; box-sizing: border-box; display: block; padding: 14px; border-radius: 10px; border: 1px solid #e2e8f0; font-size: 1rem;">
         </div>
         <div>
             <button type="submit" class="btn" style="width: 100%; font-size: 1.1rem; padding: 16px;">Entrar</button>

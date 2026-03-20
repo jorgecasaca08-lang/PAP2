@@ -80,20 +80,20 @@ if(isset($_GET['delete_portfolio'])){
 <form action="admin.php?section=portfolio" method="post" enctype="multipart/form-data" style="max-width: 100%; background: none; padding: 0; box-shadow: none;">
     <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
     <h3>Adicionar Novo Item ao Portefólio</h3>
-    <div class="form-group" style="margin-bottom: 20px;">
-        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Título:</label>
-        <input type="text" name="title" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box;">
+    <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568;">Título:</label>
+        <input type="text" name="title" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box; font-size: 0.95rem;">
     </div>
-    <div class="form-group" style="margin-bottom: 20px;">
-        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Descrição:</label>
-        <textarea name="description" rows="4" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box;"></textarea>
+    <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568;">Descrição:</label>
+        <textarea name="description" rows="4" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box; font-size: 0.95rem;"></textarea>
     </div>
-    <div class="form-group" style="margin-bottom: 20px;">
-        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Categoria:</label>
-        <input type="text" name="category" placeholder="Ex: Construção Civil, Remodelações" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box;">
+    <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568;">Categoria:</label>
+        <input type="text" name="category" placeholder="Ex: Construção Civil, Remodelações" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box; font-size: 0.95rem;">
     </div>
-    <div class="form-group" style="margin-bottom: 25px;">
-        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Imagem:</label>
+    <div class="form-group" style="margin-bottom: 25px; text-align: left;">
+        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568;">Imagem:</label>
         <input type="file" name="image" required style="width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 6px; box-sizing: border-box; background: white;">
     </div>
     <button type="submit" name="add_portfolio" class="btn" style="padding: 12px 30px;">Adicionar Item</button>

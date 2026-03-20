@@ -74,21 +74,21 @@ if(isset($_GET['delete_user'])){
     ?>
     <form action="admin.php?section=users" method="post" style="max-width: 100%; background: none; padding: 0; box-shadow: none;">
         <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-        <div class="form-group" style="margin-bottom: 20px;">
-            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Nome de Utilizador:</label>
-            <input type="text" name="new_username" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box;">
+        <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568;">Nome de Utilizador:</label>
+            <input type="text" name="new_username" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box; font-size: 0.95rem;">
         </div>
-        <div class="form-group" style="margin-bottom: 20px;">
-            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Email:</label>
-            <input type="email" name="new_email" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box;">
+        <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568;">Email:</label>
+            <input type="email" name="new_email" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box; font-size: 0.95rem;">
         </div>
-        <div class="form-group" style="margin-bottom: 20px;">
-            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Palavra-passe:</label>
-            <input type="password" name="new_password" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box;">
+        <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568;">Palavra-passe:</label>
+            <input type="password" name="new_password" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box; font-size: 0.95rem;">
         </div>
-        <div class="form-group" style="margin-bottom: 25px;">
-            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Cargo:</label>
-            <select name="new_role" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box; background-color: white;">
+        <div class="form-group" style="margin-bottom: 25px; text-align: left;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568;">Cargo:</label>
+            <select name="new_role" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box; background-color: white; font-size: 0.95rem;">
                 <option value="user">Utilizador</option>
                 <option value="admin">Administrador</option>
             </select>
