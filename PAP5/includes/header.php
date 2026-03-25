@@ -27,6 +27,15 @@
         <a href="portfolio.php"><i class="fas fa-images"></i> Portefólio</a>
         <a href="recrutamento.php"><i class="fas fa-user-tie"></i> Recrutamento</a>
         <a href="contact.php"><i class="fas fa-envelope"></i> Contactos</a>
-        <a href="login.php" target="_blank"><i class="fas fa-lock"></i> Login</a>
+        <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
+            <?php if($_SESSION['role'] === 'admin'): ?>
+                <a href="admin.php"><i class="fas fa-chart-line"></i> Admin</a>
+            <?php else: ?>
+                <a href="dashboard/index.php"><i class="fas fa-user-circle"></i> Dashboard</a>
+            <?php endif; ?>
+            <a href="admin/logout.php" style="color: #dc3545;"><i class="fas fa-sign-out-alt"></i></a>
+        <?php else: ?>
+            <a href="login.php" target="_blank"><i class="fas fa-lock"></i> Login</a>
+        <?php endif; ?>
     </nav>
 </header>
