@@ -18,9 +18,15 @@ require_once 'includes/config.php';
                 if($result = $mysqli->query($sql)){
                     if($result->num_rows > 0){
                         while($row = $result->fetch_array()){
+                            $image_path = htmlspecialchars($row['image_path']);
+                            // Ensure path is correct
+                            if (!file_exists($image_path) && file_exists('assets/' . basename($image_path))) {
+                                $image_path = 'assets/' . basename($image_path);
+                            }
                             echo '<div class="card" data-aos="fade-up">';
-                            echo '<img src="' . htmlspecialchars($row['image_path']) . '" alt="' . htmlspecialchars($row['title']) . '">';
+                            echo '<img src="' . $image_path . '" alt="' . htmlspecialchars($row['title']) . '" onerror="this.src=\'assets/construcao.jpg\'">';
                             echo '<div class="card-content">';
+                            echo '<div class="card-category">' . htmlspecialchars($row['category'] ?? 'Geral') . '</div>';
                             echo '<h3>' . htmlspecialchars($row['title']) . '</h3>';
                             echo '<p>' . htmlspecialchars($row['description']) . '</p>';
                             echo '</div>';

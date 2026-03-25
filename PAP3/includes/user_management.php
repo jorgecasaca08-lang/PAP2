@@ -72,20 +72,28 @@ if(isset($_GET['delete_user'])){
     if(isset($user_err)) echo "<div class='alert alert-danger'>$user_err</div>";
     if(isset($user_success)) echo "<div class='alert alert-success'>$user_success</div>";
     ?>
-    <form action="admin.php?section=users" method="post">
+    <form action="admin.php?section=users" method="post" style="max-width: 100%; background: none; padding: 0; box-shadow: none;">
         <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-        <label>Nome de Utilizador:</label>
-        <input type="text" name="new_username" required>
-        <label>Email:</label>
-        <input type="email" name="new_email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
-        <label>Palavra-passe:</label>
-        <input type="password" name="new_password" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
-        <label>Cargo:</label>
-        <select name="new_role" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
-            <option value="user">Utilizador</option>
-            <option value="admin">Administrador</option>
-        </select>
-        <input type="submit" name="create_user" value="Criar Utilizador" class="btn">
+        <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568;">Nome de Utilizador:</label>
+            <input type="text" name="new_username" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box; font-size: 0.95rem;">
+        </div>
+        <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568;">Email:</label>
+            <input type="email" name="new_email" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box; font-size: 0.95rem;">
+        </div>
+        <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568;">Palavra-passe:</label>
+            <input type="password" name="new_password" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box; font-size: 0.95rem;">
+        </div>
+        <div class="form-group" style="margin-bottom: 25px; text-align: left;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568;">Cargo:</label>
+            <select name="new_role" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box; background-color: white; font-size: 0.95rem;">
+                <option value="user">Utilizador</option>
+                <option value="admin">Administrador</option>
+            </select>
+        </div>
+        <button type="submit" name="create_user" class="btn" style="padding: 12px 30px;">Criar Utilizador</button>
     </form>
 
     <h3>Utilizadores Existentes</h3>

@@ -50,7 +50,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - CRM Admin</title>
+    <title>Dashboard - Alfa Engenharia & Construções</title>
     <link rel="stylesheet" href="../public/css/admin_panel.css">
 </head>
 <body>
@@ -58,7 +58,7 @@ try {
         <aside class="sidebar">
             <h3>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                Admin CRM
+                Alfa Engenharia & Construções Admin
             </h3>
             <nav>
                 <a href="dashboard.php" class="active">Dashboard</a>

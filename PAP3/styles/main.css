@@ -8,6 +8,9 @@
     --text-dark: #212529;
     --text-muted: #6c757d;
     --white: #ffffff;
+    --success: #28a745;
+    --danger: #dc3545;
+    --warning: #ffc107;
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
     --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
@@ -45,12 +48,13 @@ body {
     box-sizing: border-box;
 }
 
-.logo-container img {
-    height: 45px;
+.logo-container .logo-image {
+    height: 40px;
+    width: auto;
     transition: var(--transition);
 }
 
-.logo-container img:hover {
+.logo-container .logo-image:hover {
     transform: scale(1.05);
 }
 

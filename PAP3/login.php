@@ -42,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $mysqli){
                         if($role === 'admin'){
                             header("location: admin.php");
                         } else {
-                            header("location: dashboard.php");
+                            header("location: dashboard/index.php");
                         }
                         exit();
                     } else{
@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $mysqli){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Alfa Admin</title>
+    <title>Login | Alfa Engenharia & Construções</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <style>
@@ -124,20 +124,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $mysqli){
 <div class="login-card">
     <div class="login-header">
         <i class="fas fa-user-shield"></i>
-        <h2>Login - Alfa Engenharia</h2>
+        <h2>Login - Alfa Engenharia & Construções</h2>
     </div>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="padding: 0; box-shadow: none;">
         <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-        <div>
-            <label><i class="fas fa-user"></i> Utilizador</label>
-            <input type="text" name="username" required placeholder="Nome de utilizador">
+        <div class="form-group" style="margin-bottom: 25px; text-align: left;">
+            <label style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-weight: 600; color: #475569; font-size: 1rem;">
+                <i class="fas fa-user" style="color: var(--primary-color); width: 20px; text-align: center;"></i> Utilizador
+            </label>
+            <input type="text" name="username" required placeholder="Nome de utilizador" style="width: 100%; box-sizing: border-box; display: block; padding: 14px; border-radius: 10px; border: 1px solid #e2e8f0; font-size: 1rem;">
+        </div>
+        <div class="form-group" style="margin-bottom: 30px; text-align: left;">
+            <label style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-weight: 600; color: #475569; font-size: 1rem;">
+                <i class="fas fa-lock" style="color: var(--primary-color); width: 20px; text-align: center;"></i> Palavra-passe
+            </label>
+            <input type="password" name="password" required placeholder="Sua senha" style="width: 100%; box-sizing: border-box; display: block; padding: 14px; border-radius: 10px; border: 1px solid #e2e8f0; font-size: 1rem;">
         </div>
         <div>
-            <label><i class="fas fa-lock"></i> Palavra-passe</label>
-            <input type="password" name="password" required placeholder="Sua senha">
-        </div>
-        <div>
-            <button type="submit" class="btn" style="width: 100%;">Entrar</button>
+            <button type="submit" class="btn" style="width: 100%; font-size: 1.1rem; padding: 16px;">Entrar</button>
         </div>
     </form>
     <?php
