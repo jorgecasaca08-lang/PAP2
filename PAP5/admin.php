@@ -27,6 +27,7 @@ require_once 'includes/config.php';
         <li><a href="admin.php?section=messages" <?php echo (!isset($_GET['section']) || $_GET['section'] == 'messages') ? 'class="active"' : ''; ?>><i class="fas fa-envelope"></i> Mensagens</a></li>
         <li><a href="admin.php?section=quotes" <?php echo (isset($_GET['section']) && $_GET['section'] == 'quotes') ? 'class="active"' : ''; ?>><i class="fas fa-file-invoice-dollar"></i> Orçamentos</a></li>
         <li><a href="admin.php?section=portfolio" <?php echo (isset($_GET['section']) && $_GET['section'] == 'portfolio') ? 'class="active"' : ''; ?>><i class="fas fa-images"></i> Portefólio</a></li>
+        <li><a href="admin.php?section=cvs" <?php echo (isset($_GET['section']) && $_GET['section'] == 'cvs') ? 'class="active"' : ''; ?>><i class="fas fa-file-pdf"></i> Currículos</a></li>
         <li><a href="admin.php?section=users" <?php echo (isset($_GET['section']) && $_GET['section'] == 'users') ? 'class="active"' : ''; ?>><i class="fas fa-users"></i> Utilizadores</a></li>
         <li><a href="index.php"><i class="fas fa-external-link-alt"></i> Ver Site</a></li>
         <li><a href="admin/logout.php" style="color: #dc3545;"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
@@ -85,6 +86,12 @@ require_once 'includes/config.php';
             echo "<h1>Gestão de Utilizadores</h1>";
             echo "<section>";
             include 'includes/user_management.php';
+            echo "</section>";
+            break;
+        case 'cvs':
+            echo "<h1>Gestão de Currículos</h1>";
+            echo "<section>";
+            include 'includes/cv_management.php';
             echo "</section>";
             break;
         default:

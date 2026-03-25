@@ -14,7 +14,10 @@
 <header class="main-header">
     <div class="logo-container">
         <a href="index.php" class="logo-link">
-            <img src="assets/alfa-logo.png" alt="Alfa Engenharia Logo" class="logo-image">
+            <div class="logo-text">
+                <span class="alfa">Alfa</span>
+                <span class="subtext">ENGENHARIA & CONSTRUÇÕES</span>
+            </div>
         </a>
     </div>
     <nav class="main-nav">
@@ -22,6 +25,7 @@
         <a href="about.php"><i class="fas fa-info-circle"></i> Acerca</a>
         <a href="services.php"><i class="fas fa-tools"></i> Serviços</a>
         <a href="portfolio.php"><i class="fas fa-images"></i> Portefólio</a>
+        <a href="recrutamento.php"><i class="fas fa-user-tie"></i> Recrutamento</a>
         <a href="contact.php"><i class="fas fa-envelope"></i> Contactos</a>
         <a href="login.php" target="_blank"><i class="fas fa-lock"></i> Login</a>
     </nav>

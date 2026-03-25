@@ -48,14 +48,36 @@ body {
     box-sizing: border-box;
 }
 
-.logo-container .logo-image {
-    height: 40px;
-    width: auto;
+.logo-container .logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
     transition: var(--transition);
 }
 
-.logo-container .logo-image:hover {
-    transform: scale(1.05);
+.logo-container .logo-link:hover {
+    transform: scale(1.02);
+}
+
+.logo-text {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: baseline;
+}
+
+.logo-text .alfa {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0056b3;
+}
+
+.logo-text .subtext {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #4a5568;
+    margin-left: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .main-nav {
