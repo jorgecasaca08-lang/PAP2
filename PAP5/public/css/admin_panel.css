@@ -1,0 +1,158 @@
+/* public/css/admin_panel.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --bg-color: #f4f7f6;
+    --sidebar-bg: #1a222b;
+    --card-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    --border-radius: 12px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.admin-panel-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+}
+
+.sidebar h3 {
+    margin: 0 0 30px 0;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav a {
+    color: #adb5bd;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar nav a:hover {
+    background-color: #495057;
+    color: white;
+}
+
+.sidebar nav a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Main Content */
+.content {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.content header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.content header h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Stats Cards */
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #6c757d;
+}
+
+.card p {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Encomendas por Estado */
+.encomendas-por-estado h3 {
+    margin-bottom: 15px;
+}
+
+.encomendas-por-estado ul {
+    list-style: none;
+    padding: 0;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+.encomendas-por-estado li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.encomendas-por-estado li:last-child {
+    border-bottom: none;
+}
+
+.estado-nome {
+    font-weight: bold;
+}
+
+.estado-total {
+    background-color: #007bff;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+}
