@@ -50,7 +50,7 @@ include 'includes/header.php';
                         <i class="fas fa-map-marker-alt" style="color: var(--accent-color); font-size: 1.5rem; margin-top: 5px;"></i>
                         <div>
                             <h4 style="margin: 0 0 5px 0;">Endereço</h4>
-                            <p style="margin: 0;">Rua D. Brites de Arrochela, 411<br>Castelo de Paiva, Portugal</p>
+                            <p style="margin: 0;">Rua Imaginária, 123<br>Castelo de Paiva, Portugal</p>
                         </div>
                     </div>
 
@@ -58,7 +58,7 @@ include 'includes/header.php';
                         <i class="fas fa-envelope" style="color: var(--accent-color); font-size: 1.5rem; margin-top: 5px;"></i>
                         <div>
                             <h4 style="margin: 0 0 5px 0;">Email</h4>
-                            <p style="margin: 0;"><a href="mailto:nicodeobra@gmail.com" style="color: var(--primary-color); text-decoration: none;">nicodeobra@gmail.com</a></p>
+                            <p style="margin: 0;"><a href="mailto:jorgecasaca14942@aecpaiva.pt" style="color: var(--primary-color); text-decoration: none;">geral@alfaengenharia.pt</a></p>
                         </div>
                     </div>
 
@@ -66,7 +66,7 @@ include 'includes/header.php';
                         <i class="fas fa-phone-alt" style="color: var(--accent-color); font-size: 1.5rem; margin-top: 5px;"></i>
                         <div>
                             <h4 style="margin: 0 0 5px 0;">Telefone</h4>
-                            <p style="margin: 0;">+351 919 863 449</p>
+                            <p style="margin: 0;">+351 912 345 678</p>
                         </div>
                     </div>
 

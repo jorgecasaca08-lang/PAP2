@@ -412,24 +412,58 @@ form input:focus, form textarea:focus {
 .mt-4 { margin-top: 1.5rem; }
 .mb-4 { margin-bottom: 1.5rem; }
 
+@media (max-width: 1024px) {
+    .sidebar { width: 80px; padding: 30px 0; }
+    .sidebar h2 span, .sidebar .nav-links li a span { display: none; }
+    .sidebar .nav-links li a i { margin: 0; font-size: 1.5rem; }
+    .content { margin-left: 80px; }
+
+    .flex-container { gap: 40px; }
+    .banner h1 { font-size: 3.5rem; }
+}
+
 @media (max-width: 768px) {
     .main-header {
         padding: 15px 30px;
+        flex-direction: column;
+        height: auto;
     }
 
     .main-nav {
-        display: none; /* In a real project we'd add a mobile menu */
+        gap: 15px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .banner h1 {
-        font-size: 2.75rem;
-    }
+    .banner { padding: 100px 20px 80px; }
+    .banner h1 { font-size: 2.5rem; letter-spacing: -1px; }
+    .banner h6 { font-size: 1.1rem; }
 
     .flex-container {
-        gap: 40px;
+        gap: 30px;
+        flex-direction: column;
     }
 
     section {
         padding: 60px 20px;
+        margin: 0 !important;
     }
+
+    .logo-text .alfa { font-size: 1.75rem; }
+    .logo-text .subtext { font-size: 0.9rem; margin-left: 10px; }
+
+    .sidebar { display: none; }
+    .content { margin-left: 0; padding: 30px 20px; }
+
+    .stats-grid { grid-template-columns: 1fr; }
+    .card-container { grid-template-columns: 1fr; }
+
+    form { padding: 30px 20px; }
+}
+
+@media (max-width: 480px) {
+    .banner h1 { font-size: 2rem; }
+    .btn { width: 100%; padding: 12px 20px; }
+    .main-nav { font-size: 0.8rem; gap: 10px; }
 }

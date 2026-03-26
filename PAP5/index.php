@@ -78,9 +78,6 @@ if (isset($_GET['message']) && $_GET['message'] == 'success') {
                 </div>
             </div>
         </div>
-        <div class="text-center mt-4">
-            <a href="services.php" class="btn" style="background: var(--primary-color);">Ver Todos os Serviços</a>
-        </div>
     </div>
 </section>
 
@@ -99,7 +96,7 @@ if (isset($_GET['message']) && $_GET['message'] == 'success') {
                         </div>
                         <div>
                             <p style="margin: 0; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Telefone</p>
-                            <p style="margin: 0; font-weight: 700; color: var(--primary-color);">+351 919 863 449</p>
+                            <p style="margin: 0; font-weight: 700; color: var(--primary-color);">+351 912 345 678</p>
                         </div>
                     </div>
 
@@ -109,7 +106,7 @@ if (isset($_GET['message']) && $_GET['message'] == 'success') {
                         </div>
                         <div>
                             <p style="margin: 0; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Email</p>
-                            <p style="margin: 0; font-weight: 700; color: var(--primary-color);">nicodeobra@gmail.com</p>
+                            <p style="margin: 0; font-weight: 700; color: var(--primary-color);">geral@alfaengenharia.pt</p>
                         </div>
                     </div>
                 </div>
