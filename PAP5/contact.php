@@ -87,4 +87,22 @@ include 'includes/header.php';
     </div>
 </section>
 
+<section style="padding-top: 0;">
+    <div class="container" data-aos="fade-up">
+        <div style="background: white; padding: 20px; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); overflow: hidden; border: 1px solid #f1f5f9;">
+            <h2 style="margin-bottom: 30px; font-size: 2rem;">Nossa Localização</h2>
+            <div style="width: 100%; height: 450px; border-radius: var(--radius-lg); overflow: hidden;">
+                <iframe
+                    src="https://www.google.com/maps?q=Escola+Secundária+de+Castelo+de+Paiva&output=embed"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
 <?php include 'includes/footer.php'; ?>

@@ -166,7 +166,14 @@ body {
 }
 
 section {
-    padding: 100px 20px;
+    padding: 6.25rem 1.25rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -418,8 +425,10 @@ form input:focus, form textarea:focus {
     .sidebar .nav-links li a i { margin: 0; font-size: 1.5rem; }
     .content { margin-left: 80px; }
 
-    .flex-container { gap: 40px; }
+    .flex-container { gap: 2.5rem; }
     .banner h1 { font-size: 3.5rem; }
+
+    section { padding: 5rem 1.25rem; }
 }
 
 @media (max-width: 768px) {

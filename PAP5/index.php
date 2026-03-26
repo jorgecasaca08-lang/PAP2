@@ -21,32 +21,32 @@ if (isset($_GET['message']) && $_GET['message'] == 'success') {
     </div>
 </div>
 
-<section style="background: white; position: relative; margin-top: -60px; border-radius: var(--radius-xl); z-index: 10; margin-left: 40px; margin-right: 40px; box-shadow: var(--shadow-xl);">
-    <div class="container" style="padding: 60px;">
+<div class="container" style="position: relative; z-index: 10; margin-top: -80px; display: flex; justify-content: center;">
+    <section style="background: white; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); padding: 80px 60px; width: 100%; max-width: 1120px; margin: 0;">
         <div class="flex-container">
-            <div class="flex-item" data-aos="fade-right">
+            <div class="flex-item" data-aos="fade-right" style="flex: 1.2;">
                 <h3 style="color: var(--accent-color); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 10px;">Quem Somos</h3>
-                <h2 style="text-align: left; margin-bottom: 30px;">Comprometidos com a Excelência e Confiança</h2>
+                <h2 style="text-align: left; margin-bottom: 30px; font-size: 2.75rem; line-height: 1.2;">Comprometidos com a <br><span>Excelência e Confiança</span></h2>
                 <p>
-                   Na <strong>Alfa Engenharia & Construções</strong>, cada projeto é uma oportunidade de demonstrar o nosso compromisso com a qualidade e a inovação. Mais do que construir estruturas, construímos relações sólidas com os nossos clientes, baseadas na transparência e no rigor técnico.
+                   Na <strong>Alfa Engenharia & Construções</strong>, cada projeto é uma oportunidade de demonstrar o nosso compromisso com a qualidade e a inovação. Mais do que construir estruturas, construímos relações sólidas com os nossos clientes.
                 </p>
                 <p>
-                    A nossa equipa multidisciplinar trabalha com dedicação em todas as fases — desde o estudo inicial até à entrega final — assegurando um acompanhamento personalizado, soluções eficientes e cumprimento rigoroso de prazos.
+                    A nossa equipa multidisciplinar assegura um acompanhamento personalizado, soluções eficientes e cumprimento rigoroso de prazos e orçamentos em todas as fases da obra.
                 </p>
-                <a href="about.php" class="btn" style="padding: 12px 30px; font-size: 0.95rem;">Sobre a Empresa</a>
+                <a href="about.php" class="btn" style="padding: 14px 35px; font-size: 1rem;">Conhecer a nossa História</a>
             </div>
-            <div class="flex-item" data-aos="fade-left">
-                <div style="position: relative;">
-                    <img src="assets/casa-tijolos.jpg" alt="Construção Alfa" style="width: 100%; border-radius: var(--radius-lg);">
-                    <div style="position: absolute; bottom: -30px; right: -30px; background: var(--accent-color); color: white; padding: 30px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
-                        <p style="font-size: 2.5rem; font-weight: 800; margin: 0; line-height: 1;">15+</p>
-                        <p style="margin: 0; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Anos de Experiência</p>
+            <div class="flex-item" data-aos="fade-left" style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                <div style="position: relative; width: 100%; max-width: 500px;">
+                    <img src="assets/casa-tijolos.jpg" alt="Construção Alfa" style="width: 100%; border-radius: var(--radius-lg); display: block; box-shadow: var(--shadow-lg);">
+                    <div style="position: absolute; bottom: -20px; right: -20px; background: #FFD700; color: #0f172a; padding: 25px 30px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); text-align: center; border: 5px solid white; z-index: 20;">
+                        <p style="font-size: 3rem; font-weight: 900; margin: 0; line-height: 1;">15+</p>
+                        <p style="margin: 5px 0 0 0; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; white-space: nowrap;">Anos de Experiência</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 
 <section class="section-light" style="background: #f1f5f9;">
     <div class="container">
