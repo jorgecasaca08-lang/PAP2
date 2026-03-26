@@ -14,7 +14,6 @@
 <header class="main-header">
     <div class="logo-container">
         <a href="index.php" class="logo-link">
-            <img src="assets/alfa-icon.svg" alt="Alfa Logo" style="height: 40px; margin-right: 15px;">
             <div class="logo-text">
                 <span class="alfa">Alfa</span>
                 <span class="subtext">ENGENHARIA & CONSTRUÇÕES</span>

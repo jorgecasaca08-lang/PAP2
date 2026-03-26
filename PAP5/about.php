@@ -53,21 +53,30 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section>
+<section style="background: var(--white);">
     <div class="container">
-        <h2>Envie-nos uma mensagem</h2>
-        <form action="submit_form.php" method="POST">
-        <label for="email" data-aos="zoom-in">Email:</label>
-        <input type="email" id="email" name="Email" required data-aos="fade-right">
-
-        <label for="assunto" data-aos="zoom-in">Assunto:</label>
-        <input type="text" id="assunto" name="Assunto" required data-aos="fade-right">
-
-        <label for="mensagem" data-aos="zoom-in">Mensagem:</label>
-        <textarea id="mensagem" name="Mensagem" rows="6" required data-aos="fade-right"></textarea>
-
-        <button type="submit" class="btn" data-aos="zoom-out">Enviar</button>
-    </form>
+        <h3 style="color: var(--accent-color); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 10px; text-align: center;">Contacte-nos</h3>
+        <h2 style="margin-bottom: 60px;">Pronto para Começar o seu Projeto?</h2>
+        <form action="submit_form.php" method="POST" style="margin: 0 auto; box-shadow: var(--shadow-xl); max-width: 700px;">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="Nome" required placeholder="Seu nome">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="Email" required placeholder="exemplo@dominio.com">
+            </div>
+            <div class="form-group">
+                <label for="assunto">Assunto</label>
+                <input type="text" id="assunto" name="Assunto" required placeholder="Como podemos ajudar?">
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="Mensagem" rows="4" required placeholder="Conte-nos sobre o seu projeto..."></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%;">Enviar Pedido de Contacto</button>
+        </form>
+    </div>
 </section>
 
 
