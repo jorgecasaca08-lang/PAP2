@@ -50,7 +50,7 @@ include 'includes/header.php';
                         <i class="fas fa-map-marker-alt" style="color: var(--accent-color); font-size: 1.5rem; margin-top: 5px;"></i>
                         <div>
                             <h4 style="margin: 0 0 5px 0;">Endereço</h4>
-                            <p style="margin: 0;">Rua D. Brites de Arrochela, 411<br>Castelo de Paiva, Portugal</p>
+                            <p style="margin: 0;">Rua Imaginária, 123<br>Castelo de Paiva, Portugal</p>
                         </div>
                     </div>
 
@@ -58,7 +58,7 @@ include 'includes/header.php';
                         <i class="fas fa-envelope" style="color: var(--accent-color); font-size: 1.5rem; margin-top: 5px;"></i>
                         <div>
                             <h4 style="margin: 0 0 5px 0;">Email</h4>
-                            <p style="margin: 0;"><a href="mailto:nicodeobra@gmail.com" style="color: var(--primary-color); text-decoration: none;">nicodeobra@gmail.com</a></p>
+                            <p style="margin: 0;"><a href="mailto:jorgecasaca14942@aecpaiva.pt" style="color: var(--primary-color); text-decoration: none;">geral@alfaengenharia.pt</a></p>
                         </div>
                     </div>
 
@@ -66,7 +66,7 @@ include 'includes/header.php';
                         <i class="fas fa-phone-alt" style="color: var(--accent-color); font-size: 1.5rem; margin-top: 5px;"></i>
                         <div>
                             <h4 style="margin: 0 0 5px 0;">Telefone</h4>
-                            <p style="margin: 0;">+351 919 863 449</p>
+                            <p style="margin: 0;">+351 912 345 678</p>
                         </div>
                     </div>
 
@@ -82,6 +82,24 @@ include 'includes/header.php';
                         <a href="terms.php" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">Política de Privacidade</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="padding-top: 0;">
+    <div class="container" data-aos="fade-up">
+        <div style="background: white; padding: 20px; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); overflow: hidden; border: 1px solid #f1f5f9;">
+            <h2 style="margin-bottom: 30px; font-size: 2rem;">Nossa Localização</h2>
+            <div style="width: 100%; height: 450px; border-radius: var(--radius-lg); overflow: hidden;">
+                <iframe
+                    src="https://www.google.com/maps?q=Escola+Secundária+de+Castelo+de+Paiva&output=embed"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
             </div>
         </div>
     </div>

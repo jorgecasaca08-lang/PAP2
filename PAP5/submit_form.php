@@ -1,31 +1,26 @@
 <?php
+// PAP5/submit_form.php
+session_start();
 require_once 'includes/config.php';
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    // Use null coalescing operator to avoid undefined index errors
-    $name = $_POST['Nome'] ?? 'Não fornecido';
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $mysqli) {
+    $name = $_POST['Nome'] ?? 'Anónimo';
     $email = $_POST['Email'] ?? '';
-    $phone = $_POST['Telefone'] ?? null; // Default to null if not provided
-    $subject = $_POST['Assunto'] ?? 'Sem assunto';
+    $phone = $_POST['Telefone'] ?? '';
+    $subject = $_POST['Assunto'] ?? 'Contacto via Site';
     $message = $_POST['Mensagem'] ?? '';
+    $user_id = $_SESSION['id'] ?? null;
 
-    $sql = "INSERT INTO messages (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $mysqli->prepare("INSERT INTO messages (user_id, name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("isssss", $user_id, $name, $email, $phone, $subject, $message);
 
-    if($stmt = $mysqli->prepare($sql)){
-        $stmt->bind_param("sssss", $name, $email, $phone, $subject, $message);
-
-        if($stmt->execute()){
-            // Redirect to the homepage with a success message
-            header("location: index.php?message=success");
-            exit();
-        } else{
-            echo "ERROR: Could not execute query: $sql. " . $mysqli->error;
-        }
-    } else{
-        echo "ERROR: Could not prepare query: $sql. " . $mysqli->error;
+    if ($stmt->execute()) {
+        header("Location: index.php?message=success");
+    } else {
+        header("Location: index.php?message=error");
     }
-
     $stmt->close();
+} else {
+    header("Location: index.php");
 }
-$mysqli->close();
 ?>

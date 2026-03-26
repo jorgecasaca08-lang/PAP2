@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+// Initialize CSRF token
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 // Check if user is logged in and is an admin
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['role'] !== 'admin'){
     header("location: login.php");
@@ -18,20 +24,19 @@ require_once 'includes/config.php';
 </head>
 <body>
 
-<div class="sidebar">
-    <h2><i class="fas fa-tools"></i> Admin</h2>
-    <p>Bem-vindo, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></p>
-    <hr style="border: 0.5px solid #e2e8f0; margin: 20px 0;">
+<aside class="sidebar">
+    <h2><i class="fas fa-shield-halved"></i> Admin</h2>
     <ul class="nav-links">
-        <li><a href="admin.php?section=dashboard" <?php echo (isset($_GET['section']) && $_GET['section'] == 'dashboard') ? 'class="active"' : ''; ?>><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="admin.php?section=dashboard" <?php echo (isset($_GET['section']) && $_GET['section'] == 'dashboard') ? 'class="active"' : ''; ?>><i class="fas fa-grid-2"></i> Dashboard</a></li>
         <li><a href="admin.php?section=messages" <?php echo (!isset($_GET['section']) || $_GET['section'] == 'messages') ? 'class="active"' : ''; ?>><i class="fas fa-envelope"></i> Mensagens</a></li>
         <li><a href="admin.php?section=quotes" <?php echo (isset($_GET['section']) && $_GET['section'] == 'quotes') ? 'class="active"' : ''; ?>><i class="fas fa-file-invoice-dollar"></i> Orçamentos</a></li>
         <li><a href="admin.php?section=portfolio" <?php echo (isset($_GET['section']) && $_GET['section'] == 'portfolio') ? 'class="active"' : ''; ?>><i class="fas fa-images"></i> Portefólio</a></li>
-        <li><a href="admin.php?section=users" <?php echo (isset($_GET['section']) && $_GET['section'] == 'users') ? 'class="active"' : ''; ?>><i class="fas fa-users"></i> Utilizadores</a></li>
-        <li><a href="index.php"><i class="fas fa-external-link-alt"></i> Ver Site</a></li>
-        <li><a href="admin/logout.php" style="color: #dc3545;"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+        <li><a href="admin.php?section=cvs" <?php echo (isset($_GET['section']) && $_GET['section'] == 'cvs') ? 'class="active"' : ''; ?>><i class="fas fa-file-pdf"></i> Currículos</a></li>
+        <li><a href="admin.php?section=users" <?php echo (isset($_GET['section']) && $_GET['section'] == 'users') ? 'class="active"' : ''; ?>><i class="fas fa-users-gear"></i> Utilizadores</a></li>
+        <li style="margin-top: 40px;"><a href="index.php"><i class="fas fa-arrow-left"></i> Ver Site</a></li>
+        <li><a href="admin/logout.php" style="color: #ef4444;"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
     </ul>
-</div>
+</aside>
 
 <div class="content">
     <?php
@@ -85,6 +90,12 @@ require_once 'includes/config.php';
             echo "<h1>Gestão de Utilizadores</h1>";
             echo "<section>";
             include 'includes/user_management.php';
+            echo "</section>";
+            break;
+        case 'cvs':
+            echo "<h1>Gestão de Currículos</h1>";
+            echo "<section>";
+            include 'includes/cv_management.php';
             echo "</section>";
             break;
         default:
