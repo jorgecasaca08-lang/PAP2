@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($pageTitle) ? $pageTitle : "Alfa Engenharia & Construções"; ?></title>
-    <link rel="icon" type="image/x-icon" href="assets/ND-Engenharia-branco-azul.ico">
+    <link rel="icon" type="image/svg+xml" href="assets/alfa-icon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -14,6 +14,7 @@
 <header class="main-header">
     <div class="logo-container">
         <a href="index.php" class="logo-link">
+            <img src="assets/alfa-icon.svg" alt="Alfa Logo" style="height: 40px; margin-right: 15px;">
             <div class="logo-text">
                 <span class="alfa">Alfa</span>
                 <span class="subtext">ENGENHARIA & CONSTRUÇÕES</span>
